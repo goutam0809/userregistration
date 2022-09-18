@@ -1,9 +1,9 @@
 import "./App.css";
-import Login from "./client/Login/login"
+import Register from "./client/Login/registerUser"
 const App =()=> {
   return (
     <div>
-      <header> <Login/></header>
+      <header> <Register/></header>
     </div>
   );
 }

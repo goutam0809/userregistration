@@ -2,7 +2,6 @@
  * Copyright (c) Microsoft Corporation. All rights reserved.
  * Licensed under the MIT License.
  */
-const express = require("express");
 // const msal = require('@azure/msal-node');
 
 // const SERVER_PORT = process.env.PORT || 3001;
@@ -59,10 +58,17 @@ const express = require("express");
 //         res.status(500).send(error);
 //     });
 // });
-
+const express = require("express");
+const bodyParser = require("body-parser");
 const app = express();
+const user = require('./server/serverController/userController');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 const SERVER_PORT = process.env.PORT || 3001;
 
-app.listen(SERVER_PORT, () => console.log(`Msal Node Auth Code Sample app listening on port ${SERVER_PORT}!`))
+
+app.get('/registerUser', (req, res) => {
+    console.log("hell")
+    user.registerUser(req, res);
+})
+app.listen(SERVER_PORT);

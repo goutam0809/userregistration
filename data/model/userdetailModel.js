@@ -24,6 +24,6 @@ module.exports = (sequelize, Datatypes) => {
       freezeTableName: true,
     }
   );
-  customer.associates = function (models) {};
-  return customer;
+  userdetail.associates = function (models) {};
+  return userdetail;
 };
