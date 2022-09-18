@@ -13,14 +13,26 @@
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "save": "^2.5.0",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "http": "^0.0.1-security",
+    "path": "^0.12.7",
+    "pg": "^8.5.1",
+    "router-express": "^1.5.2",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.5.0",
+    "sequelize-cli": "^6.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "appstart": "concurrently \"node server/server.js\" \"npm run start\""
+    "appstart": "concurrently \"node server/server.js\" \"npm run start\"",
+    "migrate": "node_modules/.bin/sequelize db:migrate",
+    "seed:all": "node_modules/.bin/sequelize db:seed:all"
   },
   "eslintConfig": {
     "extends": [
