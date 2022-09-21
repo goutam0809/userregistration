@@ -67,8 +67,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const SERVER_PORT = process.env.PORT || 3001;
 
 
-app.get('/registerUser', (req, res) => {
-    console.log("hell")
+app.post('/registerUser', (req, res) => {
+    console.log(req.body)
     user.registerUser(req, res);
 })
 app.listen(SERVER_PORT);

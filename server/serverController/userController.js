@@ -1,10 +1,7 @@
 let CustomerDao = require("../serverModel/userModel");
 
-const registerUser = (req, res) =>{
- 
+const registerUser = (req, res) => {
+    
+};
 
-}
-
-
-
-module.exports = { registerUser}
+module.exports = { registerUser };
