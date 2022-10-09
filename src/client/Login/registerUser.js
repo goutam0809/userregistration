@@ -1,23 +1,20 @@
-import React from "react";
 
+import React from "react";
+import axios from 'axios';
 const Register = () => {
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
-  const registerUser = async (e) => {
+  const registerUser = (e) => {
     e.preventDefault();
-   await fetch("http://localhost:3001/registerUser", {
-      method: "POST",
-      headers: {
-        'Content-Type': 'multipart/form-data',
-        'Accept': 'application/json'
-      },
-      body:{
-        name: name,
-        email: email,
-        password: password
-      },
-    }).then((response) => {
+  const user={
+          name: name,
+          email: email,
+          password: password
+        }
+  axios
+  .post('http://localhost:3001/registerUser', user)
+    .then((response) => {
       console.log("hello");
       return response.json();
     });

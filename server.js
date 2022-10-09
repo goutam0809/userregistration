@@ -59,16 +59,21 @@
 //     });
 // });
 const express = require("express");
-const bodyParser = require("body-parser");
+const cors = require('cors');
 const app = express();
+app.use(
+    cors({
+      origin: 'http://localhost:3000',
+      credentials: true,
+    })
+  );
 const user = require('./server/serverController/userController');
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }))
 const SERVER_PORT = process.env.PORT || 3001;
 
 
 app.post('/registerUser', (req, res) => {
-    console.log(req.body)
     user.registerUser(req, res);
 })
 app.listen(SERVER_PORT);
