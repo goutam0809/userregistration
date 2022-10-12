@@ -33,7 +33,10 @@ const Login = () => {
             <p>
           Fogot Password? <a href="#"> Click here </a>
         </p>
-        </div>
+        <p>
+          Not a Registered User? <a href="/register"> Click here </a>
+        </p>
+          </div>
     ) 
 
 }

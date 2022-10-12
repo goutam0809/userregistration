@@ -1,7 +1,9 @@
 
 import React from "react";
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 const Register = () => {
+  const navigate = useNavigate();
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
@@ -15,6 +17,7 @@ const Register = () => {
   axios
   .post('http://localhost:3001/registerUser', user)
     .then((response) => {
+      navigate("/login");
       console.log("hello");
       return response.json();
     });
@@ -91,9 +94,10 @@ const Register = () => {
             Register
           </button>
         </form>
-        <p>
+        <p> 
+        
           By Clicking the Sign Up button you are agree to our 
-          <a href="#"> Terms and Conditions </a> and <a href="#"> Policy and Privacy </a>
+         <button onClick={() => navigate("https://www.google.com/")}> Terms and Conditions </button> and <a href="#"> Policy and Privacy </a>
         </p>
         <p>
           Already have an account? <a href="#"> Login here </a>
