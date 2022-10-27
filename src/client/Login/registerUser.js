@@ -1,6 +1,5 @@
-
 import React from "react";
-import axios from 'axios';
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 const Register = () => {
   const navigate = useNavigate();
@@ -9,14 +8,12 @@ const Register = () => {
   const [password, setPassword] = React.useState("");
   const registerUser = (e) => {
     e.preventDefault();
-  const user={
-          name: name,
-          email: email,
-          password: password
-        }
-  axios
-  .post('http://localhost:3001/registerUser', user)
-    .then((response) => {
+    const user = {
+      name: name,
+      email: email,
+      password: password,
+    };
+    axios.post("http://localhost:3001/registerUser", user).then((response) => {
       navigate("/login");
       console.log("hello");
       return response.json();
@@ -24,85 +21,80 @@ const Register = () => {
   };
   return (
     <div>
-      <div >
-        <header >
+      <div>
+        <header>
           <img src="" alt="" />
-          <h3 >Money Transfer App</h3>
-          <h3 >Sign Up</h3>
+          <h3>Money Transfer App</h3>
+          <h3>Sign Up</h3>
         </header>
-                <form class="form" onSubmit={registerUser}>
+        <form  onSubmit={registerUser}>
           <div>
-          <label> USERNAME </label>
+            <label> USERNAME </label>
             <input
               type="text"
               placeholder="Username"
-              
               onChange={(e) => setName(e.target.value)}
             />
           </div>
           <div>
-          <label> NAME </label>
+            <label> NAME </label>
             <input
               type="text"
               placeholder="Name"
-              
               onChange={(e) => setName(e.target.value)}
             />
           </div>
-          
+
           <div>
-          <label> EMAIL </label>
+            <label> EMAIL </label>
             <input
               type="email"
               placeholder="Email"
-              
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
 
           <div>
-          <label> ADDRESS </label>
+            <label> ADDRESS </label>
             <input
               type="text"
               placeholder="Address"
-              
               onChange={(e) => setName(e.target.value)}
             />
           </div>
 
           <div>
-          <label> PASSWORD </label>
+            <label> PASSWORD </label>                                                     
             <input
               type="password"
               placeholder="Password"
-              
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
 
           <div>
-          <label> CONFIRM PASSWORD </label>
+            <label> CONFIRM PASSWORD </label>
             <input
               type="password"
               placeholder="Password"
-              
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
 
-          <button type="submit">
-            Register
-          </button>
+          <button type="submit">Register</button>
         </form>
-        <p> 
-        
-          By Clicking the Sign Up button you are agree to our 
-         <button onClick={() => navigate("https://www.google.com/")}> Terms and Conditions </button> and <a href="#"> Policy and Privacy </a>
+        <p>
+          By Clicking the Sign Up button you are agree to our
+          <button onClick={() => navigate("https://www.google.com/")}>
+            {" "}
+            Terms and Conditions{" "}
+          </button>{" "}
+          and <a href="#"> Policy and Privacy </a>
         </p>
         <p>
           Already have an account? <a href="#"> Login here </a>
         </p>
-        </div>
+      </div>
     </div>
   );
 };

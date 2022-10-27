@@ -2,6 +2,7 @@
   "name": "userregistration",
   "version": "0.1.0",
   "private": true,
+  "allowedHosts": "all",
   "proxy": "http://localhost:3001",
   "dependencies": {
     "@azure/msal-node": "^1.14.0",

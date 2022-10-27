@@ -1,0 +1,70 @@
+[{
+    "custId":1,
+    "custName": "Srish",
+    "email": "srish@gmail.com",
+    "currBalance":20000,
+    "active": true
+  },
+  {
+    "custId":2,
+    "custName": "Shubham",
+    "email": "shubham@gmail.com",
+    "currBalance":20000,
+    "active": true
+  },
+  {
+    "custId":3,
+    "custName": "Shubham C",
+    "email": "shubhamc@gmail.com",
+    "currBalance":20000,
+    "active": true
+  },
+  {
+    "custId":4,
+    "custName": "Swati C",
+    "email": "swatic@gmail.com",
+    "currBalance":20000,
+    "active": true
+  },
+  {
+    "custId":5,
+    "custName": "Swati",
+    "email": "swati@gmail.com",
+    "currBalance":2300,
+    "active": true
+  },
+  {
+    "custId":6,
+    "custName": "Srishti",
+    "email": "srishti@gmail.com",
+    "currBalance":10000,
+    "active": true
+  },
+  {
+    "custId":7,
+    "custName": "Aakriti",
+    "email": "aakriti@gmail.com",
+    "currBalance":20000,
+    "active": true
+  },
+  {
+    "custId":8,
+    "custName": "John",
+    "email": "john@gmail.com",
+    "currBalance":20000,
+    "active": true
+  },
+  {
+    "custId":9,
+    "custName": "James",
+    "email": "james@gmail.com",
+    "currBalance":20000,
+    "active": false
+  },
+  {
+    "custId":10,
+    "custName": "Harshit",
+    "email": "harshit@gmail.com",
+    "currBalance":20000,
+    "active": true
+  }]
