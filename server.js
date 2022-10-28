@@ -75,4 +75,7 @@ const SERVER_PORT = process.env.PORT || 3001;
 app.post("/registerUser", (req, res) => {
   user.registerUser(req, res);
 });
+app.get("/loginUser", (req, res) => {
+  user.loginuser(req, res);
+});
 app.listen(SERVER_PORT);
