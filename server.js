@@ -7,7 +7,7 @@
 // const SERVER_PORT = process.env.PORT || 3001;
 // const REDIRECT_URI = "http://localhost:3001/redirect";
 
-// // Before running the sample, you will need to replace the values in the config, 
+// // Before running the sample, you will need to replace the values in the config,
 // // including the clientSecret
 // const config = {
 //     auth: {
@@ -59,22 +59,20 @@
 //     });
 // });
 const express = require("express");
-const cors = require('cors');
+const cors = require("cors");
 const app = express();
 app.use(
-    cors({
-      origin: 'http://localhost:3000',
-      credentials: true,
-    })
-  );
-const user = require('./server/serverController/userController');
+  cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+  })
+);
+const user = require("./server/serverController/userController");
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: false }));
 const SERVER_PORT = process.env.PORT || 3001;
 
-
-app.post('/registerUser', (req, res) => {
-    user.registerUser(req, res);
-    res.send("hello");
-})
+app.post("/registerUser", (req, res) => {
+  user.registerUser(req, res);
+});
 app.listen(SERVER_PORT);

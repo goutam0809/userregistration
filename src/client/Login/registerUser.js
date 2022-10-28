@@ -4,20 +4,27 @@ import { useNavigate } from "react-router-dom";
 const Register = () => {
   const navigate = useNavigate();
   const [name, setName] = React.useState("");
-  const [email, setEmail] = React.useState("");
+  const [userEmail, setUserEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const [address, setAddress] = React.useState("");
+
   const registerUser = (e) => {
     e.preventDefault();
     const user = {
       name: name,
-      email: email,
+      userEmail: userEmail,
       password: password,
+      address: address,
     };
-    axios.post("http://localhost:3001/registerUser", user).then((response) => {
-      navigate("/login");
-      console.log("hello");
-      return response.json();
-    });
+    axios
+      .post("http://localhost:3001/registerUser", user)
+      .then((response) => {
+        navigate("/");
+        console.log(response);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   return (
     <div>
@@ -27,15 +34,7 @@ const Register = () => {
           <h3>Money Transfer App</h3>
           <h3>Sign Up</h3>
         </header>
-        <form  onSubmit={registerUser}>
-          <div>
-            <label> USERNAME </label>
-            <input
-              type="text"
-              placeholder="Username"
-              onChange={(e) => setName(e.target.value)}
-            />
-          </div>
+        <form onSubmit={registerUser}>
           <div>
             <label> NAME </label>
             <input
@@ -50,7 +49,7 @@ const Register = () => {
             <input
               type="email"
               placeholder="Email"
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => setUserEmail(e.target.value)}
             />
           </div>
 
@@ -59,12 +58,12 @@ const Register = () => {
             <input
               type="text"
               placeholder="Address"
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => setAddress(e.target.value)}
             />
           </div>
 
           <div>
-            <label> PASSWORD </label>                                                     
+            <label> PASSWORD </label>
             <input
               type="password"
               placeholder="Password"
