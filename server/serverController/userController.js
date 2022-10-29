@@ -29,9 +29,8 @@ const registerUser = (req, res) => {
 const loginuser = (req, res) => {
   let userModel = new UserModel();
   try {
-    let loginObj = req.body;
-    console.log(req)
-    userModel.loginuser(loginObj, (status, message) => {
+    let loginObj = req.query;
+        userModel.loginuser(loginObj, (status, message) => {
       if (status === true) {
         console.log(message);
         res.json({

@@ -27,11 +27,11 @@ class UserModel {
           }
         })
         .catch((err) => {
+          console.log(err);
           cb(false, `${err}`);
         });
     };
   }
 }
 
-module.exports = loginuser;
 module.exports = UserModel;
